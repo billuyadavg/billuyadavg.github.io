@@ -23,18 +23,21 @@ Keep everything in single files with inline CSS and JS. Don't add a build tool, 
 
 ## Page structure (`index.html`)
 
-Sections run in this order. Their `id`s are the nav anchors, so keep them stable:
+Sections run in this order. Their `id`s are the nav and link anchors, so keep them stable:
 
-1. Hero: availability badge, H1 (begins with "Billu Yadav"), and a profile card
-2. Proof strip: 4 stats plus "Built at Zime.ai · Credihealth · TravelTriangle"
-3. `#work-with-me`: two offers, startup partnership and agentic workflows
-4. `#agentic`: 4-step process and an integrations chip list
-5. `#experience`: role timeline, recommendation quote, education
-6. `#skills`: grouped skill chips, with AI & Agents first and highlighted
-7. `#book`: Calendly inline embed
-8. `#contact`: email (with a copy button) and LinkedIn
+1. Hero: availability badge, H1 (begins with "Billu Yadav"), CTAs, and an "at a glance" card with the BY monogram. The card is hidden below 680px.
+2. Proof strip: 4 result stats plus "Built at Zime.ai · Credihealth · TravelTriangle".
+3. `#services`: two offers (startup partnership, agentic workflows) and `#agentic`, the 4-step build process.
+4. `#work`: "Selected work", three case studies (problem, what I built, results).
+5. `#engage`: "Ways to work together", four engagement cards.
+6. `#experience`: condensed role timeline, recommendation quote, education.
+7. `#skills`: one toolkit card with AI & Agents first and highlighted, then Integrations. Below 680px only the first two groups show, behind a "Show full toolkit" button.
+8. `#faq`: six `<details>` questions. Keep the visible text and the `FAQPage` JSON-LD identical.
+9. `#book`: intro, Calendly embed and `#contact` (email, copy button, LinkedIn). On mobile the calendar comes before the contact box (CSS grid areas).
 
-If you add or rename a section, update the nav links in both the desktop and mobile menus. They share one `<nav id="navLinks">`.
+Nav items are Services, Work, Engagements, Experience and FAQ, plus the Book a call button. Desktop and mobile share one `<nav id="navLinks">`. The mobile menu closes on Esc, on an outside click and after choosing a link, and the nav highlights the section in view with `aria-current`.
+
+Icons come from one inline SVG sprite at the top of `<body>` (`<use href="#i-check">` and so on). Add new icons there rather than inlining SVG paths.
 
 ## Calendly
 
@@ -57,6 +60,9 @@ If you add or rename a section, update the nav links in both the desktop and mob
 - Current title on the site: **Engineering Manager, Founding Team · Zime.ai** (from the resume; LinkedIn shows only "Founding Team").
 - The public email is `itisme.billuyadav@gmail.com`. Don't publish a phone number.
 - Keep the copy outcome-focused for founders and business owners. Rails-specific detail (ActiveRecord, jQuery and so on) adds little to the agentic-AI pitch.
+- **Case studies are anonymised.** Use "B2B SaaS · Sales AI", "Healthtech marketplace" and similar labels, never Zime.ai or Credihealth by name. Company names are fine elsewhere (hero, Built at, experience).
+- **Engagement types (all four are offered):** free 30-minute intro call, paid advisory (hourly or monthly), fractional CTO / tech co-founder (terms, including equity, case by case), and fixed-scope agentic workflow builds. No prices on the site.
+- **Decided against for now:** a headshot (keep the BY monogram) and analytics. Don't add either without asking.
 
 ## SEO checklist (keep these in sync when content changes)
 
@@ -66,7 +72,7 @@ If you add or rename a section, update the nav links in both the desktop and mob
 - The JSON-LD `@graph` holds `Person`, `ProfessionalService` and `WebSite`. Update `jobTitle`, `knowsAbout` and the offers when roles or services change, and make sure the JSON still parses.
 - Update `<lastmod>` in `sitemap.xml` whenever page content changes.
 - If the headline or positioning changes, regenerate `og-image.png` (1200×630, Inter, same palette) so link previews match.
-- Planned but not done: Google Search Console verification meta tag, an FAQ section with `FAQPage` schema, and articles or case studies.
+- Planned but not done: a Google Search Console verification meta tag, and articles or blog posts.
 
 ## Validate before every deploy
 
@@ -78,6 +84,8 @@ Run headless Chromium (Playwright is available) on `index.html` at **1440×900 a
 - No console errors (ignore failed font requests if the sandbox blocks Google Fonts)
 - The Calendly iframe appears after scrolling to `#book`, or the fallback card does
 - The JSON-LD parses, and the title and description lengths are within range
+- An axe-core scan (wcag2a, wcag2aa, wcag21aa, best-practice) reports 0 violations, and tap targets on mobile are at least 44px
+- Lighthouse stays at 100 for Accessibility and SEO and at least 95 for Performance. Locally, "text compression" and "console errors" fail only because the test server doesn't gzip and the sandbox blocks Google Fonts.
 - Full-page screenshots at both widths look right; view them, don't just generate them
 
 After deploying, recheck the live site with a cache-busting query (`/?v=<timestamp>`). Pages usually updates within 1–2 minutes. Also confirm that `/robots.txt`, `/sitemap.xml` and `/og-image.png` return 200 and that a random path returns the 404 page.
