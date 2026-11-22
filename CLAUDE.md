@@ -1,10 +1,10 @@
 # CLAUDE.md — billuyadavg.github.io
 
-Personal landing page for **Billu Yadav**, served by GitHub Pages at https://billuyadavg.github.io/.
+Personal landing page for **Billu Yadav**, served by GitHub Pages at **https://billuyadav.com/** (custom domain; the repo is still `billuyadavg.github.io`, which now redirects to it).
 
 **Positioning:** a startup leader with 13 years' experience, now an independent consultant. He is a digital partner to idea-stage and seed to Series A B2B SaaS founders (especially sales teams), available for startup partnerships and idea discussions, and builds agentic AI workflows for business requirements. Every change should support one goal: getting the visitor to **book a call**.
 
-> This repo is public and `.nojekyll` serves every file, including this one, at billuyadavg.github.io/CLAUDE.md. Never commit tokens, passwords, phone numbers or private notes.
+> This repo is public and `.nojekyll` serves every file, including this one, at billuyadav.com/CLAUDE.md. Never commit tokens, passwords, phone numbers or private notes.
 
 ## Stack and files
 
@@ -18,6 +18,7 @@ A static site with no build step, framework or package manager. Pages deploys st
 | `apple-touch-icon.png` | 180×180 home-screen icon |
 | `robots.txt`, `sitemap.xml` | Crawl rules and the single-URL sitemap |
 | `.nojekyll` | Tells Pages to skip Jekyll; keep it |
+| `CNAME` | Custom domain `billuyadav.com`; keep it, or Pages drops the domain |
 
 Keep everything in single files with inline CSS and JS. Don't add a build tool, a CSS framework or extra JS libraries unless asked.
 
@@ -70,10 +71,11 @@ Icons come from one inline SVG sprite at the top of `<body>` (`<use href="#i-che
 
 - `<title>` stays under about 60 characters and the meta description at 150–160.
 - The H1 includes "Billu Yadav". There is exactly one H1, and heading levels don't skip (h1 → h2 → h3).
-- Open Graph and Twitter tags point to `https://billuyadavg.github.io/og-image.png` with `summary_large_image`.
+- Open Graph and Twitter tags point to `https://billuyadav.com/og-image.png` with `summary_large_image`.
 - The JSON-LD `@graph` holds `Person`, `ProfessionalService` and `WebSite`. Update `jobTitle`, `knowsAbout` and the offers when roles or services change, and make sure the JSON still parses.
 - Update `<lastmod>` in `sitemap.xml` whenever page content changes.
-- If the headline or positioning changes, regenerate `og-image.png` (1200×630, Inter, same palette) so link previews match.
+- Canonical, `og:url`, JSON-LD `@id`/`url`, `sitemap.xml` and `robots.txt` all use `https://billuyadav.com/`. Never reintroduce the github.io URL.
+- If the headline or positioning changes, regenerate `og-image.png` (1200×630, Inter, same palette; footer shows billuyadav.com) so link previews match.
 - Planned but not done: a Google Search Console verification meta tag, and articles or blog posts.
 
 ## Validate before every deploy
@@ -98,7 +100,13 @@ After deploying, recheck the live site with a cache-busting query (`/?v=<timesta
 - Commit messages are short and imperative, for example `SEO: share image, sitemap, robots, 404, structured data`.
 - Never use personal access tokens, and never store one in the repo, in commands or in chat. Deploy through the Claude GitHub connection or the GitHub web UI ("Add file → Upload files") while signed in as `billuyadavg`.
 
+## Domain and DNS
+
+- `billuyadav.com` is registered at GoDaddy (Billu's account). DNS: four apex `A` records `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153, and `CNAME www` → `billuyadavg.github.io`. Leave the NS, SOA, `_domainconnect` and `_dmarc` records alone.
+- GitHub repo Settings → Pages holds the custom domain and "Enforce HTTPS". Domain renews Oct 2027; auto-renew was off when set up.
+
 ## Related
 
+- Site: https://billuyadav.com/
 - LinkedIn: https://www.linkedin.com/in/billuyadav/
 - Booking: https://calendly.com/billuyadav/30min-meeting-with-billu
