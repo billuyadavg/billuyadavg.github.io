@@ -2,7 +2,7 @@
 
 Personal landing page for **Billu Yadav**, served by GitHub Pages at https://billuyadavg.github.io/.
 
-**Positioning:** a startup leader with 13 years' experience who is available for startup partnerships and idea discussions, and who builds agentic AI workflows for business requirements. Every change should support one goal: getting the visitor to **book a call**.
+**Positioning:** a startup leader with 13 years' experience, now an independent consultant. He is a digital partner to idea-stage and seed to Series A B2B SaaS founders (especially sales teams), available for startup partnerships and idea discussions, and builds agentic AI workflows for business requirements. Every change should support one goal: getting the visitor to **book a call**.
 
 > This repo is public and `.nojekyll` serves every file, including this one, at billuyadavg.github.io/CLAUDE.md. Never commit tokens, passwords, phone numbers or private notes.
 
@@ -57,7 +57,9 @@ Icons come from one inline SVG sprite at the top of `<body>` (`<use href="#i-che
 
 - **Experience is always "13 years".** The resume and LinkedIn say "12+", but Billu chose 13 for the site.
 - Sources, in priority order: Billu's instructions, then his resume (`Billu_Yadav_RoR_Resume.pdf`), then LinkedIn (linkedin.com/in/billuyadav). Don't invent metrics. Every number on the page comes from the resume or LinkedIn.
-- Current title on the site: **Engineering Manager, Founding Team · Zime.ai** (from the resume; LinkedIn shows only "Founding Team").
+- **Current role:** Independent Consultant — Agentic AI & Startup Technical Partner (Nov 2026 – present). Clients are confidential; the AI model training work may be mentioned only in general terms. He is setting up a consulting company; rename the role once it has a name.
+- **Zime.ai:** title **Founding Team Member**, Jan 2024 – Oct 2026 (Billu's choice, matching LinkedIn). Never "Engineering Manager" for Zime. He led the team and owned integrations and the meeting pipeline (calendar sync → recording → transcripts → playbook checks, plus CRM sync).
+- **Location:** Jaipur, India (IST). Remote.
 - The public email is `itisme.billuyadav@gmail.com`. Don't publish a phone number.
 - Keep the copy outcome-focused for founders and business owners. Rails-specific detail (ActiveRecord, jQuery and so on) adds little to the agentic-AI pitch.
 - **Case studies are anonymised.** Use "B2B SaaS · Sales AI", "Healthtech marketplace" and similar labels, never Zime.ai or Credihealth by name. Company names are fine elsewhere (hero, Built at, experience).
