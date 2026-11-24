@@ -16,6 +16,7 @@ A static site with no build step, framework or package manager. Pages deploys st
 | `404.html` | Branded not-found page (`noindex`) with links home and to `/#book` |
 | `og-image.png` | 1200×630 link-preview image (LinkedIn, WhatsApp, X) |
 | `apple-touch-icon.png` | 180×180 home-screen icon |
+| `billu-yadav.webp` | 360×360 headshot for the hero card and mobile name row |
 | `robots.txt`, `sitemap.xml` | Crawl rules and the single-URL sitemap |
 | `.nojekyll` | Tells Pages to skip Jekyll; keep it |
 | `CNAME` | Custom domain `billuyadav.com`; keep it, or Pages drops the domain |
@@ -65,7 +66,7 @@ Icons come from one inline SVG sprite at the top of `<body>` (`<use href="#i-che
 - Keep the copy outcome-focused for founders and business owners. Rails-specific detail (ActiveRecord, jQuery and so on) adds little to the agentic-AI pitch.
 - **Case studies are anonymised.** Use "B2B SaaS · Sales AI", "Healthtech marketplace" and similar labels, never Zime.ai or Credihealth by name. Company names are fine elsewhere (hero, Built at, experience).
 - **Engagement types (all four are offered):** free 30-minute intro call, paid advisory (hourly or monthly), fractional CTO / tech co-founder (terms, including equity, case by case), and fixed-scope agentic workflow builds. No prices on the site.
-- **Photo:** Billu approved a headshot (Nov 2026). Add it as `billu-yadav.webp` (square, ~360px, small WebP) and put `<img src="billu-yadav.webp" alt="Photo of Billu Yadav" width="72" height="72">` inside `.avatar` in the hero card, plus `<img class="m-photo" src="billu-yadav.webp" alt="" width="40" height="40">` at the start of `.h1-name` for mobile. The CSS for both is already in place; the BY monogram shows until the photo exists. Don't reference the file before it is committed, or the page logs a 404.
+- **Photo:** `billu-yadav.webp` (360×360 WebP, cropped around the face from the photo Billu sent in Nov 2026). It appears in the hero card (`.avatar`, 72px, BY monogram behind it as fallback) and as a 40px `.m-photo` next to the name on mobile, and is the JSON-LD `Person.image`. Keep it small (under ~15 KB).
 - **Decided against for now:** analytics. Don't add it without asking.
 
 ## SEO checklist (keep these in sync when content changes)
