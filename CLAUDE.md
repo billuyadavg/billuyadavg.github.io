@@ -26,7 +26,7 @@ Keep everything in single files with inline CSS and JS. Don't add a build tool, 
 
 Sections run in this order. Their `id`s are the nav and link anchors, so keep them stable:
 
-1. Hero: availability badge, H1 (begins with "Billu Yadav"), CTAs, and an "at a glance" card with the BY monogram. The card is hidden below 680px.
+1. Hero: badge "Now taking on new projects" (matches the LinkedIn banner), H1 "Billu Yadav" + "Upgrade your business with agentic AI workflows.", a lede for founders and business owners, CTAs ("Book a free 30-min call", "See what I've built"), and an "at a glance" card with a 72px avatar. The card is hidden below 680px.
 2. Proof strip: 4 result stats plus "Built at Zime.ai · Credihealth · TravelTriangle".
 3. `#services`: two offers (startup partnership, agentic workflows) and `#agentic`, the 4-step build process.
 4. `#work`: "Selected work", three case studies (problem, what I built, results).
@@ -65,7 +65,8 @@ Icons come from one inline SVG sprite at the top of `<body>` (`<use href="#i-che
 - Keep the copy outcome-focused for founders and business owners. Rails-specific detail (ActiveRecord, jQuery and so on) adds little to the agentic-AI pitch.
 - **Case studies are anonymised.** Use "B2B SaaS · Sales AI", "Healthtech marketplace" and similar labels, never Zime.ai or Credihealth by name. Company names are fine elsewhere (hero, Built at, experience).
 - **Engagement types (all four are offered):** free 30-minute intro call, paid advisory (hourly or monthly), fractional CTO / tech co-founder (terms, including equity, case by case), and fixed-scope agentic workflow builds. No prices on the site.
-- **Decided against for now:** a headshot (keep the BY monogram) and analytics. Don't add either without asking.
+- **Photo:** Billu approved a headshot (Nov 2026). Add it as `billu-yadav.webp` (square, ~360px, small WebP) and put `<img src="billu-yadav.webp" alt="Photo of Billu Yadav" width="72" height="72">` inside `.avatar` in the hero card, plus `<img class="m-photo" src="billu-yadav.webp" alt="" width="40" height="40">` at the start of `.h1-name` for mobile. The CSS for both is already in place; the BY monogram shows until the photo exists. Don't reference the file before it is committed, or the page logs a 404.
+- **Decided against for now:** analytics. Don't add it without asking.
 
 ## SEO checklist (keep these in sync when content changes)
 
